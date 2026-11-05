@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Give every new student a professional starter kit formulated for Indian skin. Chullan is opening a pilot programme with a small number of salon and makeup academies. Book your academy call on WhatsApp.">
+<!--ARTIFACT-START-->
+<title>Chullan Student Starter Kit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Jost:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: single dark editorial column. Full-width ink bands, each with its own gutter-padded
+   inner wrap; condensed display type against gold hairlines, no imagery. One CTA throughout. */
+:root{
+  --ink:#0e0d0c;
+  --ink-2:#191714;
+  --ink-3:#221f1b;
+  --paper:#f4f3f0;
+  --stone:#e8e6e2;
+  --gold:#c9a77b;
+  --gold-hi:#e3c79f;
+  --gold-deep:#9a7448;
+  --mute:#a29c94;
+  --line:rgba(244,243,240,.14);
+  --line-2:rgba(244,243,240,.07);
+
+  --f-display:'Oswald','Arial Narrow','Helvetica Neue',sans-serif;
+  --f-body:'Cabin',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-logo:'Jost','Futura','Century Gothic',sans-serif;
+  --f-serif:'Instrument Serif','Times New Roman',serif;
+
+  --fs-hero:clamp(31px,4.9vw,60px);
+  --fs-h2:clamp(28px,4.4vw,52px);
+  --fs-h3:clamp(19px,2vw,25px);
+  --fs-lead:clamp(16px,1.35vw,20px);
+  --fs-body:clamp(15px,1.02vw,16.5px);
+  --fs-label:11.5px;
+
+  --max:1280px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0;background:var(--ink);color:var(--paper);
+  font-family:var(--f-body);font-size:var(--fs-body);line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--ink);z-index:40}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-family:var(--f-display);font-weight:500;text-transform:uppercase;line-height:1;letter-spacing:-.005em;text-wrap:balance}
+p{margin:0}
+::selection{background:var(--gold);color:var(--ink)}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
+
+/* ---- primitives ---- */
+.wrap{
+  width:100%;max-width:var(--max);margin-inline:auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+.band{border-top:1px solid var(--line-2)}
+.band>.wrap{padding-block:clamp(48px,6.4vw,96px)}
+.label{font-family:var(--f-logo);font-size:var(--fs-label);font-weight:500;letter-spacing:.24em;text-transform:uppercase}
+.eyebrow{display:flex;align-items:center;gap:12px;color:var(--gold);flex-wrap:wrap}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line);min-width:24px}
+.lede{font-size:var(--fs-lead);line-height:1.5;color:var(--stone);max-width:58ch}
+.muted{color:var(--mute)}
+.serif-i{font-family:var(--f-serif);font-style:italic;text-transform:none;letter-spacing:0;color:var(--gold)}
+.stars{font-size:.62em;letter-spacing:.2em;vertical-align:.18em;color:var(--gold)}
+.sec-head{display:flex;flex-direction:column;gap:17px;margin-bottom:clamp(28px,3.6vw,50px)}
+.sec-head h2{font-size:var(--fs-h2)}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:11px;
+  min-height:54px;padding:13px 24px;border:1px solid transparent;cursor:pointer;
+  font-family:var(--f-display);font-weight:500;font-size:14.5px;letter-spacing:.09em;
+  text-transform:uppercase;line-height:1.2;text-align:center;
+  transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);
+}
+.btn-solid{background:var(--gold);color:var(--ink)}
+.btn-solid:hover{background:var(--gold-hi)}
+.btn-sm{min-height:42px;padding:10px 16px;font-size:13px;letter-spacing:.11em}
+.btn .wa{width:18px;height:18px;flex:none;fill:currentColor}
+.cta-block{display:flex;flex-direction:column;gap:13px;align-items:flex-start;width:100%;max-width:420px}
+.cta-block .btn{width:100%}
+.cta-micro{display:flex;gap:10px;align-items:flex-start;color:var(--mute);font-size:13.5px;line-height:1.5}
+.cta-micro .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none;margin-top:6px}
+
+/* ---- ticker ---- */
+.ticker{background:var(--ink-2);border-bottom:1px solid var(--line-2);overflow:hidden}
+.ticker-track{display:flex;width:max-content;animation:slide 42s linear infinite}
+.ticker-track span{
+  font-family:var(--f-logo);font-size:10.5px;font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--mute);padding:9px 0;white-space:nowrap;
+}
+.ticker-track span b{color:var(--gold);font-weight:500}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---- header ---- */
+.hdr{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:50;
+  background:rgba(14,13,12,.93);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-2);
+}
+.hdr>.wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:11px}
+.logo{display:inline-flex;flex-direction:column;align-items:center;gap:2px;padding:6px 11px 5px;position:relative;font-family:var(--f-logo);line-height:1;color:var(--paper)}
+.logo .frame{position:absolute;inset:0;border:1.2px solid currentColor;opacity:.55}
+.logo .word{font-size:18px;font-weight:500;letter-spacing:.08em}
+.logo .tag{font-size:6.2px;font-weight:500;letter-spacing:.3em;white-space:nowrap}
+.hdr-note{font-family:var(--f-logo);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);display:none}
+@media(min-width:1000px){.hdr-note{display:block}}
+
+/* ---- hero (kept short: headline, sub, one button, microcopy) ---- */
+.hero>.wrap{padding-block:clamp(36px,4.6vw,66px) clamp(32px,4vw,56px);display:flex;flex-direction:column;gap:clamp(19px,2.3vw,27px)}
+.hero h1{font-size:var(--fs-hero);text-transform:none;letter-spacing:-.012em;line-height:1.05;max-width:26ch}
+.hero h1 .gold{color:var(--gold)}
+.hero .lede{max-width:56ch}
+
+/* ---- stat rail ---- */
+.rail{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+@media(min-width:620px){.rail{grid-template-columns:repeat(4,1fr)}}
+.rail-i{padding:16px 15px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.rail-i b{display:block;font-family:var(--f-display);font-weight:500;font-size:clamp(22px,2.4vw,31px);line-height:1;color:var(--gold);font-variant-numeric:tabular-nums}
+.rail-i span{display:block;margin-top:6px;font-family:var(--f-logo);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);line-height:1.5}
+
+/* ---- kit sequence ---- */
+.seq{display:grid;gap:1px;background:var(--line-2);border-block:1px solid var(--line-2)}
+@media(min-width:560px){.seq{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.seq{grid-template-columns:repeat(4,1fr)}}
+.step{background:var(--ink);padding:21px 19px 23px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step .n{font-family:var(--f-display);font-size:12px;font-weight:500;letter-spacing:.2em;color:var(--gold-deep);font-variant-numeric:tabular-nums}
+.step .verb{font-family:var(--f-logo);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.step h3{font-size:17.5px;line-height:1.14;letter-spacing:0}
+.step p{font-size:13.8px;color:var(--mute);line-height:1.5}
+.kit-note{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 26px;font-family:var(--f-logo);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.kit-note b{color:var(--gold);font-weight:500}
+
+/* ---- value cards ---- */
+.cards{display:grid;gap:1px;background:var(--line-2)}
+@media(min-width:700px){.cards{grid-template-columns:1fr 1fr}}
+.card{background:var(--ink);padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;gap:11px;min-width:0}
+.card h3{font-size:var(--fs-h3);line-height:1.08}
+.card p{color:var(--mute);font-size:15.5px}
+.card .rule{width:34px;height:2px;background:var(--gold);margin-bottom:3px}
+
+/* ---- pilot ---- */
+.pilot-band{background:var(--ink-2);border-top:1px solid var(--line)}
+.pilot{display:grid;gap:clamp(26px,3.4vw,54px);align-items:start}
+@media(min-width:880px){.pilot{grid-template-columns:1.1fr .9fr}}
+.pilot-main{display:flex;flex-direction:column;gap:18px;min-width:0}
+.pilot-main h2{font-size:var(--fs-h2);max-width:20ch}
+.pilot-points{display:flex;flex-direction:column;gap:13px;margin-top:2px}
+.pilot-points li{display:flex;gap:12px;align-items:flex-start;color:var(--stone);font-size:15.5px;line-height:1.5}
+.pilot-points{list-style:none;padding:0;margin:0}
+.pilot-points li::before{content:"★";color:var(--gold);font-size:10px;flex:none;margin-top:6px}
+.pilot-side{border:1px solid var(--line);padding:clamp(20px,2.2vw,28px);display:flex;flex-direction:column;gap:14px;min-width:0}
+.pilot-side .label{color:var(--gold)}
+.who{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);
+  font-family:var(--f-logo);font-size:12px;letter-spacing:.06em;color:var(--stone);
+}
+.chip::before{content:"★";color:var(--gold);font-size:8.5px}
+
+/* ---- shades ---- */
+.shade-wrap{display:grid;gap:clamp(22px,3vw,44px);align-items:start}
+@media(min-width:860px){.shade-wrap{grid-template-columns:.95fr 1.05fr}}
+.swatches{display:flex;min-width:0;border:1px solid var(--line)}
+.sw{flex:1 1 0;height:clamp(64px,9vw,104px);min-width:0}
+.shade-scale{display:flex;justify-content:space-between;gap:12px;margin-top:11px;font-family:var(--f-logo);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.callout{border-left:2px solid var(--gold);padding:4px 0 4px 16px;color:var(--stone);font-size:15.5px}
+
+/* ---- standards ---- */
+.std{display:grid;gap:1px;background:var(--line-2);border:1px solid var(--line-2)}
+@media(min-width:560px){.std{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.std{grid-template-columns:repeat(3,1fr)}}
+.std-i{background:var(--ink);padding:18px 19px;min-width:0}
+.std-i b{display:block;font-family:var(--f-display);font-size:14px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--paper)}
+.std-i span{display:block;margin-top:5px;font-size:13.2px;color:var(--mute);line-height:1.5}
+
+/* ---- booking steps ---- */
+.proc{display:grid;gap:1px;background:var(--line-2)}
+@media(min-width:800px){.proc{grid-template-columns:repeat(3,1fr)}}
+.proc-i{background:var(--ink-2);padding:clamp(24px,2.6vw,34px);display:flex;flex-direction:column;gap:12px;min-width:0}
+.proc-i .n{font-family:var(--f-display);font-size:clamp(36px,4vw,54px);font-weight:600;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--gold-deep);font-variant-numeric:tabular-nums}
+.proc-i h3{font-size:var(--fs-h3);line-height:1.1}
+.proc-i p{color:var(--mute);font-size:15px}
+.proc-i .meta{font-family:var(--f-logo);font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--gold);margin-top:auto;padding-top:8px}
+
+/* ---- faq ---- */
+.faq{border-top:1px solid var(--line);max-width:72ch}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:18px 42px 18px 0;position:relative;
+  font-family:var(--f-display);font-size:clamp(15.5px,1.5vw,19px);font-weight:500;
+  text-transform:uppercase;letter-spacing:.015em;line-height:1.25;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:6px;top:50%;width:13px;height:13px;margin-top:-6.5px;
+  background:
+    linear-gradient(var(--gold),var(--gold)) center/13px 1.5px no-repeat,
+    linear-gradient(var(--gold),var(--gold)) center/1.5px 13px no-repeat;
+  transition:transform .3s var(--ease);
+}
+.faq details[open] summary::after{transform:rotate(90deg);background:linear-gradient(var(--gold),var(--gold)) center/13px 1.5px no-repeat}
+.faq summary:hover{color:var(--gold-hi)}
+.faq .ans{padding:0 0 21px;color:var(--mute);max-width:64ch}
+
+/* ---- closing cta ---- */
+.close-band{background:var(--ink-2);border-top:1px solid var(--line)}
+.close-inner{display:flex;flex-direction:column;gap:clamp(19px,2.4vw,28px);align-items:flex-start;max-width:46ch}
+.close-inner h2{font-size:var(--fs-h2)}
+
+/* ---- footer ---- */
+.ft{border-top:1px solid var(--line-2);background:var(--ink)}
+.ft>.wrap{padding-block:34px 28px;display:flex;flex-direction:column;gap:24px}
+.ft-top{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
+.ft-contact{display:flex;flex-direction:column;gap:7px;font-size:14px;color:var(--mute);min-width:0}
+.ft-contact b{font-family:var(--f-logo);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.ft-contact .sel{color:var(--stone);user-select:all;word-break:break-word}
+.ft-base{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;align-items:center;border-top:1px solid var(--line-2);padding-top:19px;font-family:var(--f-logo);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+
+/* ---- sticky mobile bar ---- */
+.dock{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
+  background:rgba(14,13,12,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);
+  padding-top:10px;
+  padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+.dock .btn{width:100%}
+@media(max-width:999px){
+  .dock{display:block}
+  body{padding-bottom:92px}
+}
+
+/* ---- toast ---- */
+.toast{
+  position:fixed;z-index:70;left:50%;transform:translateX(-50%) translateY(14px);
+  bottom:calc(104px + env(safe-area-inset-bottom,0px));
+  background:var(--paper);color:var(--ink);padding:12px 20px;
+  font-family:var(--f-logo);font-size:12px;letter-spacing:.09em;text-transform:uppercase;
+  max-width:min(92vw,420px);text-align:center;line-height:1.45;
+  opacity:0;pointer-events:none;transition:opacity .28s var(--ease),transform .28s var(--ease);
+}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .ticker-track{animation:none}
+}
+</style>
+<!--HEAD-END-->
+</head>
+<body>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Formulated in the USA <b>★</b> For Indian skin tones <b>★</b> Stability tested at 40°C <b>★</b> Paraben free <b>★</b> Mineral oil free <b>★</b> Dermatologically tested <b>★</b> Professional grade makeup <b>★</b> Made in India <b>★</b>&nbsp;</span>
+    <span>Formulated in the USA <b>★</b> For Indian skin tones <b>★</b> Stability tested at 40°C <b>★</b> Paraben free <b>★</b> Mineral oil free <b>★</b> Dermatologically tested <b>★</b> Professional grade makeup <b>★</b> Made in India <b>★</b>&nbsp;</span>
+  </div>
+</div>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Chullan home">
+      <span class="frame" aria-hidden="true"></span>
+      <span class="word">CHULLAN</span>
+      <span class="tag">★★★ MAKE UP ★★★</span>
+      <span class="tag">PROFESSIONAL</span>
+    </a>
+    <span class="hdr-note">Student starter kit &mdash; academy pilot programme</span>
+    <a class="btn btn-solid btn-sm" data-wa href="#book">
+      <svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.13c-1.5 0-2.98-.4-4.27-1.17l-.3-.18-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23s-3.7 8.25-8.15 8.25Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.13.17 1.73 2.64 4.19 3.7.59.26 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.59.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"/></svg>
+      Book a call
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="label eyebrow"><span class="stars">★★★</span> Pilot programme &mdash; salon &amp; makeup academies</p>
+      <h1>Give every new student a professional starter kit, <span class="gold">formulated for Indian skin.</span></h1>
+      <p class="lede">Eight salon-grade base products, applied in one teachable sequence. Chullan is opening a pilot programme with a small number of salon and makeup academies. Book a call to see how it fits your batches.</p>
+      <div class="cta-block">
+        <a class="btn btn-solid" data-wa href="#book">
+          <svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.13c-1.5 0-2.98-.4-4.27-1.17l-.3-.18-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23s-3.7 8.25-8.15 8.25Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.13.17 1.73 2.64 4.19 3.7.59.26 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.59.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"/></svg>
+          Book your academy call on WhatsApp
+        </a>
+        <p class="cta-micro"><span class="dot" aria-hidden="true"></span><span>Takes 2 minutes. Sample kit for your academy included.</span></p>
+      </div>
+      <div class="rail">
+        <div class="rail-i"><b>8</b><span>Products per student kit</span></div>
+        <div class="rail-i"><b>8</b><span>Shades for Indian undertones</span></div>
+        <div class="rail-i"><b>40&deg;C</b><span>Stability tested</span></div>
+        <div class="rail-i"><b>3 yrs</b><span>Shelf life</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. WHAT'S IN THE KIT -->
+  <section class="band" id="kit">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label eyebrow">The student starter kit</p>
+        <h2 style="max-width:22ch">What every student gets. <span class="serif-i">In order.</span></h2>
+        <p class="lede">One kit per student, with eight products applied in a fixed sequence &mdash; each designed to set up the next. Your trainers teach one base routine instead of improvising across brands.</p>
+      </div>
+      <div class="seq">
+        <div class="step"><span class="n">01</span><span class="verb">Prep</span><h3>Moisturiser</h3><p>100 g. Dermatologically tested, classified Non-Irritant.</p></div>
+        <div class="step"><span class="n">02</span><span class="verb">Protect</span><h3>Sunscreen SPF 50</h3><p>100 g. SPF 50.8 verified, with no white cast.</p></div>
+        <div class="step"><span class="n">03</span><span class="verb">Prime</span><h3>Hydrating Primer</h3><p>30 g. Jojoba-infused grip primer.</p></div>
+        <div class="step"><span class="n">04</span><span class="verb">Correct</span><h3>Colour Corrector Palette</h3><p>6 &times; 4 g. Light, dark and burnt orange, green, yellow, purple.</p></div>
+        <div class="step"><span class="n">05</span><span class="verb">Conceal</span><h3>Concealer</h3><p>30 g. Three warm shades.</p></div>
+        <div class="step"><span class="n">06</span><span class="verb">Build</span><h3>Liquid Foundation</h3><p>30 ml. Eight shades across Professional Base and Pro Glow.</p></div>
+        <div class="step"><span class="n">07</span><span class="verb">Control</span><h3>Anti-Shine Powder</h3><p>10 g. Four shades.</p></div>
+        <div class="step"><span class="n">08</span><span class="verb">Set</span><h3>Setting Spray</h3><p>100 ml. Alcohol-free.</p></div>
+      </div>
+      <p class="kit-note"><span><b>Kit size</b> &mdash; set around your batch size and course length</span><span><b>Shades</b> &mdash; matched in person at your demo</span></p>
+    </div>
+  </section>
+
+  <!-- 3. WHY ACADEMIES USE IT -->
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label eyebrow">Why academies use it</p>
+        <h2 style="max-width:24ch">Built for the skin your students actually work on.</h2>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <span class="rule" aria-hidden="true"></span>
+          <h3>Formulated for Indian skin tones</h3>
+          <p>Not a global formula with an Indian shade range bolted on. Formulated in the USA for the undertones, pigmentation depths and climate your students work in daily.</p>
+        </div>
+        <div class="card">
+          <span class="rule" aria-hidden="true"></span>
+          <h3>Salon grade, not student grade</h3>
+          <p>The same products used by working salon professionals and bridal artists. Students train on what they will be expected to use the day they start charging clients.</p>
+        </div>
+        <div class="card">
+          <span class="rule" aria-hidden="true"></span>
+          <h3>One kit, one teachable process</h3>
+          <p>Eight products in a fixed order gives your curriculum a single repeatable base routine students can be graded on.</p>
+        </div>
+        <div class="card">
+          <span class="rule" aria-hidden="true"></span>
+          <h3>Tested and documented</h3>
+          <p>Non-Irritant under IS 4011:2018. SPF 50 verified by UV transmittance analysis. Paraben-free and mineral oil-free across all eight products. Not label claims &mdash; documented.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PILOT PROGRAMME -->
+  <section class="pilot-band">
+    <div class="wrap" style="padding-block:clamp(48px,6.4vw,96px)">
+      <div class="pilot">
+        <div class="pilot-main">
+          <p class="label eyebrow">Pilot programme</p>
+          <h2>Founding academies, onboarding now.</h2>
+          <p class="lede">We're onboarding a limited number of founding academies. Pilot academies shape the kit size and terms with us, and get priority access as the programme opens up.</p>
+          <ul class="pilot-points">
+            <li>Set the kit configuration around your batches, rather than taking a fixed pack.</li>
+            <li>Priority access and first allocation as the programme widens.</li>
+            <li>Direct line to us while the programme is being built, not a distributor queue.</li>
+            <li>One sample kit per academy, sent after the intro call.</li>
+          </ul>
+        </div>
+        <div class="pilot-side">
+          <p class="label">Who we're onboarding</p>
+          <div class="who">
+            <span class="chip">Bridal makeup academies</span>
+            <span class="chip">Beauty &amp; cosmetology schools</span>
+            <span class="chip">Makeup artistry courses</span>
+            <span class="chip">Salon chains with a training wing</span>
+            <span class="chip">Hair &amp; beauty institutes</span>
+            <span class="chip">Independent master trainers</span>
+          </div>
+          <p class="muted" style="font-size:13.5px">In a pilot, documented testing is the proof. Every claim below is on file.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SHADE RANGE -->
+  <section class="band">
+    <div class="wrap">
+      <div class="shade-wrap">
+        <div>
+          <div class="sec-head" style="margin-bottom:20px">
+            <p class="label eyebrow">Shade range</p>
+            <h2 style="max-width:16ch">Every student's shade exists.</h2>
+          </div>
+          <p class="lede" style="margin-bottom:17px">Eight shades. Two formulations. One standard. The original Professional Base, and the advanced Pro Glow with enhanced luminosity. Every shade is engineered for Indian undertones.</p>
+          <p class="callout">Shade matching in person at your demo. We test along the jawline in natural daylight &mdash; the right shade disappears into the skin without a visible line.</p>
+        </div>
+        <div>
+          <div class="swatches" role="img" aria-label="Colour strip of eight foundation shades from fair neutral to deep warm">
+            <span class="sw" style="background:#f0d3b8"></span>
+            <span class="sw" style="background:#e8c3a2"></span>
+            <span class="sw" style="background:#ddb089"></span>
+            <span class="sw" style="background:#cf9b72"></span>
+            <span class="sw" style="background:#bd855c"></span>
+            <span class="sw" style="background:#a66e49"></span>
+            <span class="sw" style="background:#8b5739"></span>
+            <span class="sw" style="background:#70442c"></span>
+          </div>
+          <div class="shade-scale"><span>Fair neutral</span><span>Deep warm</span></div>
+          <p class="muted" style="margin-top:16px;font-size:13.5px">Indicative of the range. Exact shades, including Pro Glow tones such as Cashew (C2W1), are matched at the demo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. STANDARDS -->
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label eyebrow">Standards</p>
+        <h2 style="max-width:18ch">Tested. Certified. <span class="serif-i">Documented.</span></h2>
+      </div>
+      <div class="std">
+        <div class="std-i"><b>IS 4011:2018</b><span>Moisturiser and sunscreen dermatologically tested, classified Non-Irritant.</span></div>
+        <div class="std-i"><b>IS 14318:1996</b><span>The foundation range conforms to this standard.</span></div>
+        <div class="std-i"><b>SPF 50.8</b><span>Verified through UV transmittance analysis.</span></div>
+        <div class="std-i"><b>40&deg;C stability</b><span>Tested to perform in real Indian working temperatures.</span></div>
+        <div class="std-i"><b>Paraben &amp; mineral oil free</b><span>Across all eight products in the kit.</span></div>
+        <div class="std-i"><b>USA formulated &middot; Made in India</b><span>Alcohol-free setting spray. Three-year shelf life.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. HOW BOOKING WORKS -->
+  <section class="band" id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label eyebrow">How booking works</p>
+        <h2 style="max-width:20ch">Two conversations, then you decide.</h2>
+      </div>
+      <div class="proc">
+        <div class="proc-i">
+          <span class="n">01</span>
+          <h3>Tap the WhatsApp button</h3>
+          <p>A few quick taps for your academy name, city, batch size and a preferred call time. No forms and nothing to type out.</p>
+          <span class="meta">WhatsApp &mdash; 2 minutes</span>
+        </div>
+        <div class="proc-i">
+          <span class="n">02</span>
+          <h3>The intro call</h3>
+          <p>About an hour, on a phone call or Google Meet. We go through your courses, batch sizes and what your students struggle with, then how the starter kit would sit inside your batches.</p>
+          <span class="meta">Phone or Google Meet &mdash; 1 hour</span>
+        </div>
+        <div class="proc-i">
+          <span class="n">03</span>
+          <h3>The product demo</h3>
+          <p>Scheduled at the end of the call. Hands-on with all eight products and live shade matching, so you and your trainers judge the finish yourselves before anything is decided.</p>
+          <span class="meta">At your academy &mdash; scheduled on the call</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ -->
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label eyebrow">Before you book</p>
+        <h2 style="max-width:16ch">Questions academies ask.</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>What happens on the first call?</summary>
+          <div class="ans">About an hour, on a phone call or Google Meet &mdash; whichever you prefer. We ask about your courses, batch sizes and what your students struggle with, then take you through the eight-product kit and how academies use it. If it looks like a fit, we schedule the product demo before the call ends.</div>
+        </details>
+        <details>
+          <summary>What happens after the call?</summary>
+          <div class="ans">We schedule the product demo at your academy &mdash; hands-on with all eight products and live shade matching with your trainers. Your sample kit is sent after the intro call, one per academy.</div>
+        </details>
+        <details>
+          <summary>Will you have shades for all my students?</summary>
+          <div class="ans">Eight foundation shades, fair neutral to deep warm, across two formulations &mdash; Professional Base and the more luminous Pro Glow. Every shade is engineered for Indian undertones rather than adapted from a global range. The concealer comes in three warm shades and the anti-shine powder in four.</div>
+        </details>
+        <details>
+          <summary>Will it hold up in our working conditions?</summary>
+          <div class="ans">The foundation range is stability tested at 40&deg;C and conforms to IS 14318:1996. The moisturiser and sunscreen are dermatologically tested under IS 4011:2018 guidelines and classified Non-Irritant. Shelf life is three years.</div>
+        </details>
+        <details>
+          <summary>What about kit size and pricing?</summary>
+          <div class="ans">Kit size and pilot terms are set around your batch size and course length, so there's no one-size price list. We confirm everything on the intro call. No commitment.</div>
+        </details>
+        <details>
+          <summary>Where are the products made?</summary>
+          <div class="ans">Formulated in the USA and manufactured in India. Paraben free and mineral oil free across all eight products, with an alcohol-free setting spray.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FINAL CTA -->
+  <section class="close-band" id="book">
+    <div class="wrap" style="padding-block:clamp(52px,6.6vw,104px)">
+      <div class="close-inner">
+        <p class="label eyebrow" style="width:100%">Book your academy call</p>
+        <h2>Start with a call. <span class="serif-i">Decide after the demo.</span></h2>
+        <p class="lede">A few taps on WhatsApp and we'll confirm your slot &mdash; phone or Google Meet, about an hour. The product demo is scheduled from there.</p>
+        <div class="cta-block">
+          <a class="btn btn-solid" data-wa href="#book">
+            <svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.13c-1.5 0-2.98-.4-4.27-1.17l-.3-.18-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23s-3.7 8.25-8.15 8.25Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.13.17 1.73 2.64 4.19 3.7.59.26 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.59.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"/></svg>
+            Book your academy call on WhatsApp
+          </a>
+          <p class="cta-micro"><span class="dot" aria-hidden="true"></span><span>Takes 2 minutes. Sample kit for your academy included. No commitment on the call.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <a class="logo" href="#top" aria-label="Back to top">
+        <span class="frame" aria-hidden="true"></span>
+        <span class="word">CHULLAN</span>
+        <span class="tag">★★★ MAKE UP ★★★</span>
+        <span class="tag">PROFESSIONAL</span>
+      </a>
+      <div class="ft-contact">
+        <b>Academy enquiries</b>
+        <span class="sel">care@chullancosmetics.com</span>
+        <span><a href="https://www.chullancosmetics.com/" style="color:var(--stone);border-bottom:1px solid var(--line)">chullancosmetics.com</a></span>
+      </div>
+    </div>
+    <div class="ft-base">
+      <span>Paraben free &middot; Mineral oil free &middot; Formulated in the USA &middot; Made in India</span>
+      <span>&copy; Chullan Cosmetics</span>
+    </div>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="btn btn-solid" data-wa href="#book">
+    <svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.13c-1.5 0-2.98-.4-4.27-1.17l-.3-.18-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23s-3.7 8.25-8.15 8.25Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.4-.13-.56.12-.17.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.13.17 1.73 2.64 4.19 3.7.59.26 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.59.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"/></svg>
+    Book your academy call on WhatsApp
+  </a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* =========================================================================
+   WHATSAPP BOOKING  —  THE ONLY THING YOU NEED TO EDIT
+   Put the number in international format, digits only: country code, no
+   "+", no spaces, no dashes.  India example: "919876543210"
+   Until it is filled in, every booking button stays in place and shows a
+   short notice instead of opening a broken link.
+   ========================================================================= */
+var WHATSAPP_NUMBER = "";
+
+/* The pre-filled first message. The rest of the qualifying (academy name,
+   city, batch size, courses, preferred call time) happens as tap-buttons
+   inside your WhatsApp flow. */
+var FIRST_MESSAGE = "Hi Chullan, I'm interested in the Student Starter Kit for my academy.";
+/* ========================================================================= */
+
+(function () {
+  "use strict";
+
+  var number = String(WHATSAPP_NUMBER || "").replace(/[^0-9]/g, "");
+  var message = FIRST_MESSAGE + channelTag();
+  var buttons = document.querySelectorAll("[data-wa]");
+
+  for (var i = 0; i < buttons.length; i++) {
+    wire(buttons[i]);
+  }
+
+  /* Channel attribution: tag the first message with whatever utm_source /
+     utm_campaign the visitor arrived on, so you can tell in WhatsApp which
+     channel sends academies that actually finish the flow. Link your ads as
+     e.g. https://your-site.com/?utm_source=instagram&utm_campaign=academy-oct */
+  function channelTag() {
+    try {
+      var p = new URLSearchParams(window.location.search);
+      var bits = [];
+      var source = p.get("utm_source") || p.get("source");
+      var campaign = p.get("utm_campaign");
+      if (source) { bits.push(String(source).slice(0, 40)); }
+      if (campaign) { bits.push(String(campaign).slice(0, 40)); }
+      return bits.length ? "\n\n[" + bits.join(" / ") + "]" : "";
+    } catch (e) {
+      return "";
+    }
+  }
+
+  function wire(el) {
+    if (number) {
+      el.setAttribute("href", "https://wa.me/" + number + "?text=" + encodeURIComponent(message));
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener");
+      return;
+    }
+    el.addEventListener("click", function (e) {
+      e.preventDefault();
+      toast("WhatsApp booking opens here — number coming soon");
+    });
+  }
+
+  var timer;
+  function toast(text) {
+    var box = document.getElementById("toast");
+    if (!box) { return; }
+    box.textContent = text;
+    box.classList.add("on");
+    clearTimeout(timer);
+    timer = setTimeout(function () { box.classList.remove("on"); }, 3200);
+  }
+
+  /* Smooth in-page jumps for the anchor links, respecting reduced motion. */
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a || a.hasAttribute("data-wa")) { return; }
+    var id = a.getAttribute("href").slice(1);
+    var target = id ? document.getElementById(id) : document.body;
+    if (!target) { return; }
+    e.preventDefault();
+    target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+  });
+})();
+</script>
+<!--ARTIFACT-END-->
+</body>
+</html>
